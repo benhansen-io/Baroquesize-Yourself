@@ -3,7 +3,7 @@ Baroquesize Yourself
 
 A simple web app created for my History of Creativity (BYU Tech202) class' end of semester project. The app allows the user to take a picture of themselves and adjust the image to make the picture look more like baroque style art. The app was demoed at the "creativity fair" where my partner created a photo booth with baroque era props. The original app would allow you to send a link to your picture via your email, but it has been modified to allow you to download the image directly instead.
 
-The app can be viewed at [http://benjamin-hansen.com/baroque]().
+The app can be viewed at [http://benjamin-hansen.com/baroque](http://benjamin-hansen.com/baroque).
 
 Currently this app only runs properly on Chrome version 25 or later. Access to the web cam is through WebRTC.
 
