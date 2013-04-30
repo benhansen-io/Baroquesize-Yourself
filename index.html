@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Asul:400,700' rel='stylesheet' type='text/css'>
+    <title>Baroquesize Yourself</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <div id="header">Baroquesize Yourself</div><div id="steps">
+      <span id="s1" class="step"><span class="steplabel">Step 1:</span> Take Picture</span>
+      <span id="s2" class="step"><span class="steplabel">Step 2:</span> Chiaroscuro</span>
+      <span id="s3" class="step"><span class="steplabel">Step 3:</span> Sfumato</span>
+      <span id="s4" class="step"><span class="steplabel">Step 4:</span> Share</span>
+    </div><div id="center">
+      <video id="video"></video>
+      <canvas id="canvas"></canvas>
+      <div id="whiteflash"></div>
+      <div id="controls">
+        <span id="c1" class="control">
+          <button id="capturebutton"></button>
+        </span>
+        <span id="c2" class="control">
+          <input id="lighten" value="lighten" name="adjust-brightness" type="radio" checked="checked"><label for="lighten">Lighten</label>
+          <input id="darken" value="darken" name="adjust-brightness" type="radio"><label for="darken">Darken</label>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <button id="adjust-contrast">Add Baroqueness</button>
+          <button id="reset">Reset</button>
+        </span>
+        <span id="c4" class="control">
+          <!--
+          <label for="email">Email: </label><input id="email" type="email" /><button id="send">Send</button>
+          -->
+          <button id="download">Download</button>
+        </span>
+        <hr>
+        <div id="practical-instructions">
+        </div>
+        <hr>
+        <button id="start-over">Start Over</button>
+        <button id="next">Next</button>
+        <div id="clearfix">
+        </div>
+      </div>
+      </div><div id="instructions">
+      <div id="instr-title">Take Picture</div><br>
+      <span id="instr-text"></span>
+    </div>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="pixastic.js"></script>
+    <script src="pixastic.effects.js"></script>
+    <script src="pixastic.worker.js"></script>
+    <script type="text/javascript" src="videostreamer.js"></script>
+    <script type="text/javascript" src="image_manipulator.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
