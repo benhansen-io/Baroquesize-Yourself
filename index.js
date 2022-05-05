@@ -193,31 +193,19 @@
     $('#practical-instructions').html("Sorry. There was an error sending the email. Feel free to pull out your smartphone and take a picture of the screen.");
   }
 
-  // From:
-  // http://domainrange.blogspot.co.uk/2013/04/prompting-user-to-download-data-uri-and.html
   function downloadWithName(uri, name) {
-
-    function eventFire(el, etype){
-      if (el.fireEvent) {
-        (el.fireEvent('on' + etype));
-      } else {
-        var evObj = document.createEvent('Events');
-        evObj.initEvent(etype, true, false);
-        el.dispatchEvent(evObj);
-      }
-    }
-
     var link = document.createElement("a");
     link.download = name;
     link.href = uri;
-    eventFire(link, "click");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
   }
 
   $('#download').click(function () {
     var rawImageData = canvas.toDataURL("image/png")
     downloadWithName(rawImageData, "YourBaroqueSelf.png");
-    /*rawImageData = rawImageData.replace("image/png", "image/octet-stream")
-    document.location.href = rawImageData;*/
   });
 
   //Start the engines!

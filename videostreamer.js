@@ -10,31 +10,20 @@
     var streaming = false;
     var height = width / 4 * 3;
 
-    navigator.getMedia = ( navigator.getUserMedia ||
-      navigator.webkitGetUserMedia ||
-      navigator.mozGetUserMedia ||
-    navigator.msGetUserMedia);
-
-    navigator.getMedia(
+    navigator.mediaDevices.getUserMedia(
       {
         video: true,
         audio: false
-      },
-      function(stream) {
-        if (navigator.mozGetUserMedia) {
-          video.mozSrcObject = stream;
-        } else {
-          var vendorURL = window.URL || window.webkitURL;
-          video.src = vendorURL.createObjectURL(stream);
-        }
-        video.play();
-      },
-      function(err) {
-        console.log("An error occured! " + err);
-      }
-    );
+      }).then(function(stream) {
+        video.srcObject = stream;
+        video.onloadedmetadata = function() {
+          video.play();
+        };
+      }).catch(function(err) {
+        console.error("An error occured! " + err);
+      });
 
-    video.addEventListener('canplay', function(ev){
+    video.addEventListener('canplay', function(ev) {
       if (!streaming) {
         video.setAttribute('width', width);
         video.setAttribute('height', height);
